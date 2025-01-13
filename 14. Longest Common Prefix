@@ -1,0 +1,26 @@
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+
+        if not strs:
+            return ""
+
+        # Take the first word as the starting point
+        #string list(strs) get the words in each string as index 0,1,...
+        prefix = strs[0] #first word of string list
+
+        for word in strs[1:]:
+            # This checks if the current word starts with the prefix. If not, the prefix is shortened until all words in the list start with the same prefix. This ensures the function finds the longest common prefix.
+            while not word.startswith(prefix):
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+        return prefix
+
+strs = ["flower","flow","flight"]
+solution = Solution()
+print(solution.longestCommonPrefix(strs))
+        
