@@ -1,0 +1,30 @@
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+    
+    # If needle is an empty string, return 0
+        if not needle:
+            return 0
+        
+        # Use the `find` method to locate the first occurrence of needle in haystack (for all substring)
+        index = haystack.find(needle)    # for Pam! Don't use for loop because it can check only in single index, so it's harder
+        return index
+
+# BTW is Pam want to use, you have to modify it as this below!
+# Loop through haystack to find the first occurrence of needle
+'''
+    for i in range(len(haystack) - len(needle) + 1):
+        # Check if the substring of haystack matches needle
+        if haystack[i:i+len(needle)] == needle:
+        return i
+'''
+
+
+haystack = "sadbutsad"
+needle = "sad"
+solution = Solution()
+print("Output:", solution.strStr(haystack, needle))
