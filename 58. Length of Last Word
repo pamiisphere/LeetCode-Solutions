@@ -1,0 +1,23 @@
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+    
+        # Strip trailing spaces to focus on the last word (only for the last word's space)
+        s = s.strip()
+        
+        # Start from the end and count the length of the last word
+        length = 0
+        for char in reversed(s):    # to use for loop from the last elements first (already CHAR = character)
+            if char == " ":
+                break      # stop the loop because it's end of the last element
+            length += 1     # to add up the length of each CHAR to create the last word 
+        return length
+   
+
+
+s = "   fly me   to   the moon  "
+solution = Solution()
+print(solution.lengthOfLastWord(s))
