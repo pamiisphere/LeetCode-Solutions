@@ -1,0 +1,27 @@
+class Solution(object):
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        if x < 2:
+            return x  # the square root of x is x itself!
+        
+        left = 0     # start with 0 because all the square root of x is between (0, x)
+        right = x   # see right as the input x
+        # Binary Search Tree (More information on 35. Search Insert Position)
+        while left <= right:    # Binary Tree is True
+            mid = (left + right) // 2       # floor division or equal to mid = int((left + right) / 2) 
+            if mid * mid == x:    # Power of 2 because mid*mid
+                return mid    # the square root
+            elif mid * mid < x:     
+                left = mid + 1      # change the left pointer form to mid + 1 form to search the higher range (Ceiling).
+            else:
+                right = mid - 1     # change the right pointer form to mid - 1 form to search the lower range (Flooring).
+            # run while loop untill left > right (keep Update new value of left, right, and mid to scope the range)
+        return right
+
+
+x = 4
+solution = Solution()
+print(solution.mySqrt(x))
