@@ -15,9 +15,9 @@ class Solution(object):
         # Convert the sum back to a binary string
         binary = bin(sum_num)[2:]    # see detail below
         """
-            Use `bin` function to convert the decimal to binary
+            Use `bin` function in Python to convert the decimal to binary
             bin() alone will strip the '0b' prefix will show at the output first (0b used to represent the binary symbol) 
-            e.g. bin(5) '0b101'
+            e.g. bin(5) '0b101' (101 = 5 and 0b represents binary number)
             bin()[2:]  to indicate the index since index 2 till the end (remove 2 first elemetns which are '0' and 'b')
         """
         return binary
