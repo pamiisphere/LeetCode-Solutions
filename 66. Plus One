@@ -1,0 +1,29 @@
+class Solution(object):
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+    
+        #  ''.join(...) combines the strings into one
+        digit = ''.join(map(str, digits))   # map(str, digits) converts each digit to a string
+        number = int(digit)   # to convert the merged digits to the integer number
+        result = number + 1   # to represent the integer output
+
+        # we need to convert the integer result to be in digit list
+        result = [int(d) for d in str(result)]   # see detail below
+
+        return result
+        '''
+                str(number) converts the integer 123 into the string '123'
+                for d in str(number) iterates over each character ('1', '2', '3') of that string (d is just a variable, can change)
+                int(d) converts each character back into an integer.
+        '''
+            
+
+
+
+
+digits = [1,2,3]
+solution = Solution()
+print(solution.plusOne(digits))
